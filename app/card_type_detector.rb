@@ -1,4 +1,4 @@
-class CardTypeDetector
+module CardTypeDetector
   
   # credit card types grouped by number 
   # +============+=============+===============+
@@ -22,7 +22,7 @@ class CardTypeDetector
 
 
   # returns the corresponding credit card name
-  def self.card_type_for(number)
+  def card_type_for(number)
     CARD_TYPES_BY_REGEX.each do |regex, card|
       return card if number.to_s =~ regex
     end

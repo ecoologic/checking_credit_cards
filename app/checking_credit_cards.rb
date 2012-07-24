@@ -1,6 +1,8 @@
 # https://gist.github.com/6ca21baf77a47d72b23c
 class CheckingCreditCards
 
+  extend Luhn, CardTypeDetector
+
   LAST_COLUMN_POSITION = 30
 
   CARD_NAMES = {
@@ -25,11 +27,11 @@ class CheckingCreditCards
   def self.present_all(numbers)
     numbers.map{|n| n.to_s.gsub ' ', '' }.map do |card_number|
       begin
-        card_type = CardTypeDetector.card_type_for card_number
-        valid     = Luhn.valid? card_number
+        card_type = card_type_for card_number
+        valid     = valid_luhn? card_number
         present card_type, card_number, valid
-      rescue Exception => e
-        "Card number #{card_number} could not be checked because #{e.message}"
+      # rescue Exception => e
+      #   "Card number #{card_number} could not be checked because #{e.message}"
       end
     end
   end
