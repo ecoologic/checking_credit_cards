@@ -1,4 +1,4 @@
-puts 'Checking Credit Cards'
+puts "\n** Checking Credit Cards**\n"
 
 Dir['./app/*.rb'].each(&method(:require))
 
@@ -13,4 +13,6 @@ CheckingCreditCards.present_all(
   9111111111111111
 ]).each {|line| puts line}
 
-puts 'bye'
+CheckingCreditCards.console
+
+puts "\nbye\n"
