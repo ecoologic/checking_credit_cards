@@ -3,6 +3,14 @@ class CheckingCreditCards
 
   LAST_COLUMN_POSITION = 30
 
+  CARD_NAMES = {
+    visa:     "Visa",
+    amex:     "AMEX",
+    discover: "Discover",
+    mc:       "MasterCard",
+    unknown:  "Unknown"
+  }
+
   def self.console
     puts "\nEnter credit card numbers, one per line, finish with an empty line"
     credit_cards = []
@@ -29,7 +37,7 @@ class CheckingCreditCards
 
   def self.present(card, number, valid)
     spaces = ' ' * spaces_for(card, number)
-    "#{card}: #{number}#{spaces}(#{'in' unless valid}valid)"
+    "#{CARD_NAMES[card]}: #{number}#{spaces}(#{'in' unless valid}valid)"
   end
 
 
