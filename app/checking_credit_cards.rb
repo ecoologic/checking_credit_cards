@@ -28,8 +28,8 @@ class CheckingCreditCards
         card_type = CardTypeDetector.card_type_for card_number
         valid     = Luhn.valid? card_number
         present card_type, card_number, valid
-      # rescue Exception => e # TODO: reintroduce at the end
-      #   "Card number #{card_number} could not be checked because #{e.message}"
+      rescue Exception => e
+        "Card number #{card_number} could not be checked because #{e.message}"
       end
     end
   end
