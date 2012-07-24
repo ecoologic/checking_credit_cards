@@ -42,7 +42,7 @@ class CheckingCreditCards
 
 
   def self.spaces_for(card, number)
-    LAST_COLUMN_POSITION - card.length - number.length
+    LAST_COLUMN_POSITION - CARD_NAMES[card].length - number.length
   end
   private_class_method :spaces_for
 
