@@ -17,6 +17,10 @@ describe CheckingCreditCards do
       CheckingCreditCards.present_all(['5105 1051 0510 5106']).first.must_match(/^MasterCard(.*)\(invalid\)$/)
     end
 
+    it "valid/invalid column is always in line" do
+      CheckingCreditCards.present_all(['5105 1051 0510 5106']).first[32].must_equal '('
+    end
+
   end
 
 end
