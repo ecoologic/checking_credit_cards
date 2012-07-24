@@ -15,7 +15,7 @@ class CardTypeDetector
   # also see: http://www.regular-expressions.info/creditcard.html
   CARD_TYPES_BY_REGEX = {
     /^3[47][0-9]{13}$/           => :amex,
-    /^6011[0-9]{12}/            => :discover,
+    /^6011[0-9]{12}$/            => :discover,
     /^5[1-5][0-9]{14}$/         => :mc,
     /^4[0-9]{12}(?:[0-9]{3})?$/ => :visa
   }

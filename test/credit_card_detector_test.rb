@@ -15,6 +15,11 @@ describe CardTypeDetector do
     it "should return unknown for a non-credit card number" do
       CardTypeDetector.card_type_for(51051234123412341).must_equal :unknown
     end
+
+    it "should return unknown for a too long, almost discover card" do
+      CardTypeDetector.card_type_for(601111111111111711).must_equal :unknown
+    end
+
   end
 
 
