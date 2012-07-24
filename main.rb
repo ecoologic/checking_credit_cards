@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 puts "\n** Checking Credit Cards**\n"
 
 Dir['./app/*.rb'].each(&method(:require))

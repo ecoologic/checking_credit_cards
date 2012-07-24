@@ -6,8 +6,8 @@ The program should print the card in the following format "TYPE: NUMBERS (VALIDI
 Developed on ruby-1.9.3-p125. Ruby 1.9 is needed because of syntax and minitest, small changes are needed for ruby 1.8
 
 ** Console
-Run with `ruby main.rb`
+Run with `./main.rb` or `ruby main.rb`
 
 
 ** Test
-Run only tests with `ruby test.rb`
+Run only tests with `./test.rb` or `ruby test.rb`
