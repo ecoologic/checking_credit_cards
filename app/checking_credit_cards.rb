@@ -12,7 +12,7 @@ class CheckingCreditCards
   def self.present_all(numbers)
     numbers.map{|n| n.to_s.gsub ' ', '' }.map do |card_number| # TODO: move gsub in present
       card_type = CardTypeDetector.card_type_for card_number
-      valid     = true # TODO Luhn.valid? card_number
+      valid     = Luhn.valid? card_number
       present card_type, card_number, valid
     end
   end
