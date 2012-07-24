@@ -10,4 +10,4 @@ Run with `ruby main.rb`
 
 
 ** Test
-TODO
+Run only tests with `ruby test.rb`
