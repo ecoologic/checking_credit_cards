@@ -9,7 +9,7 @@ describe CardTypeDetector do
     end
     
     it "should return mastercard for an invalid mastercard number" do
-      CardTypeDetector.card_type_for(5105105105105106).must_equal :mastercard
+      CardTypeDetector.card_type_for(5105105105105106).must_equal :mc
     end
     
     it "should return unknown for a non-credit card number" do
