@@ -24,7 +24,7 @@ module Luhn
   # For digits greater than 9 you will need to split them and sum them independently
   # (i.e. "10", 1 + 0).
   def luhn_sum(numbers)
-    numbers.map{|n| number_to_ary n}.flatten.
+    numbers.map(&method(:number_to_ary)).flatten.
             inject(0) {|sum, n| sum + n}
   end
 
