@@ -38,13 +38,14 @@ class CheckingCreditCards
 
 
   def self.present(card, number, valid)
-    spaces = ' ' * spaces_for(card, number)
-    "#{CARD_NAMES[card]}: #{number}#{spaces}(#{'in' unless valid}valid)"
+    "#{CARD_NAMES[card]}: #{number}#{spaces_for card, number}(#{'in' unless valid}valid)"
   end
 
 
+  # how many blank spaces to align with the last column?
   def self.spaces_for(card, number)
-    LAST_COLUMN_POSITION - CARD_NAMES[card].length - number.length
+    spaces = LAST_COLUMN_POSITION - CARD_NAMES[card].length - number.length
+    ' ' * (spaces > 1 ? spaces : 1)
   end
   private_class_method :spaces_for
 
