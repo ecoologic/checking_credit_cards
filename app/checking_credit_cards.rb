@@ -30,8 +30,8 @@ class CheckingCreditCards
         card_type = card_type_for card_number
         valid     = valid_luhn? card_number
         present card_type, card_number, valid
-      # rescue Exception => e
-      #   "Card number #{card_number} could not be checked because #{e.message}"
+      rescue Exception => e
+        "Card number #{card_number} could not be checked because #{e.message}"
       end
     end
   end
