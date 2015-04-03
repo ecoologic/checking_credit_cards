@@ -1,3 +1,9 @@
+* Working: Yes
+* Interesting: No
+* Progress: Complete
+* Purpose: Excercise
+
+
 ** Problem
 Write a ruby program that accepts credit card numbers. Card numbers must be passed in line by line (one set of numbers per line)
 The program should print the card in the following format "TYPE: NUMBERS (VALIDITY)"
